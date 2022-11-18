@@ -1,0 +1,212 @@
+@font-face {
+    font-family: DragonFire;
+    src: url("../fonts/DragonFire.ttf");
+}
+
+@font-face {
+    font-family: Frediano;
+    src: url("../fonts/san_frediano_regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/tile-sky2.jpg");
+}
+
+html {scroll-behavior: smooth;}
+
+nav {
+    position: sticky;
+    top: 0%;
+    z-index: 20;
+}
+
+.topnav {
+    position: sticky;
+    overflow: hidden;
+    background-color: purple;
+}
+
+.topnav a {
+    font-family: DragonFire;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+ /* Nav Media Queries */
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#hero {
+    background-image: url(../images/dragon1.jpg);
+    height: 92vh;
+    background-size: cover;
+    position: relative;
+    background-position: center center;
+}
+
+#hero h3 {
+    text-shadow: 3px 3px 3px white;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    font-size: 2.7em;
+    color: purple;
+    border-radius: 10px 20px 10px 40px;
+    font-family: DragonFire;
+    position: absolute;
+    top: 40px;
+    right: 80px;
+}
+
+#introduction {
+    background-image: url(../images/tile.jpg);
+    height: 92vh;
+}
+
+#introduction h1 {
+    font-size: 2em;
+    font-family: DragonFire;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#introduction p {
+    font-size: Frediano;
+    text-indent: 3.7em;
+    color: white;
+    font-size: 1.4em;
+}
+
+/* #cards {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+} */
+
+#cards {
+    width: 100%;
+    background-color: #ddd;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: 250px; */
+    grid-gap: 10px;
+}
+
+.card img{
+    margin: 20px;
+    height: 380px;
+}
+
+#footer {
+    background-image: url("../images/tile.jpg");
+    margin: auto;
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+@media screen and (max-width: 1400px) {
+    #cards {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    .card {
+        margin: 0 auto;
+    }
+
+    #introduction h1 {
+        font-size: 1.6em;
+    }
+
+    #introduction p {
+        margin: auto 30px;
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #introduction h1 {
+        font-size: 1.6em;
+    }
+
+    #introduction p {
+        margin: auto 30px;
+        font-size: 1em;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #cards {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+
+    .card {
+        margin: 0 auto;
+    }
+
+    .card img {
+        height: 600px;
+    }
+}
+
+/* @media screen and (max-width: 799px) {
+    #introduction p {
+        margin: auto 10px;
+        font-size: 1.3em;
+    }
+} */
